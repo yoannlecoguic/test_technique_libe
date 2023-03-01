@@ -1,9 +1,12 @@
 ## Task manager
 Routes :
-	- GET http://localhost:8080/api/tasks/:id
-	- POST http://localhost:8080/api/tasks { title, description, assignee, priority, status }
-	- PUT http://localhost:8080/api/tasks/:id { title, description, assignee, priority, status }
-	- DELETE http://localhost:8080/api/tasks/:id
+* GET http://localhost:8080/api/tasks/:id
+
+* POST http://localhost:8080/api/tasks { title, description, assignee, priority, status }
+
+* PUT http://localhost:8080/api/tasks/:id { title, description, assignee, priority, status }
+
+* DELETE http://localhost:8080/api/tasks/:id
 
 With headers :
 Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6InlvYW5uMSJ9LCJpYXQiOjE2Nzc2NzgzMzEsImV4cCI6MTY3Nzg1MTEzMX0.df8M4dkqlj283V2QgbnFEXl5UVc0igjqjwLC2MSI-tk
