@@ -2,6 +2,7 @@
 
 Rename .env.example to .env in /
 ```sh
+docker-compose up
 docker exec -it backContainer bash
 npx prisma generate
 npx prisma migrate dev
@@ -23,7 +24,7 @@ npx prisma migrate dev
 
 ### Run Unit Tests with Jest
 
-Rename .env.example to .env in /back
 ```sh
+cd back/
 npm run test:unit
 ```
