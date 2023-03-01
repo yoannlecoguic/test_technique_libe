@@ -8,7 +8,8 @@ Routes :
 
 * DELETE http://localhost:8080/api/tasks/:id
 
-With headers :
+**With headers :**
+
 Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6InlvYW5uMSJ9LCJpYXQiOjE2Nzc2NzgzMzEsImV4cCI6MTY3Nzg1MTEzMX0.df8M4dkqlj283V2QgbnFEXl5UVc0igjqjwLC2MSI-tk
 
 ## Project Setup
