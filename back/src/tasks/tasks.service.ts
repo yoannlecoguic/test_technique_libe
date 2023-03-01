@@ -12,6 +12,14 @@ interface Task {
 export default {
 	prisma: prisma.task,
 
+	get: async (id: number) => {
+		return await prisma.task.findUniqueOrThrow({
+			where: {
+				id,
+			}
+		})
+	},
+
 	create: async (options: Task) => {
 		return await prisma.task.create({
 			data: {

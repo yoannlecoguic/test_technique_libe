@@ -6,11 +6,7 @@ import { auth } from '../auth/auth.middleware'
 export default (app: Express) => {
 	app.get('/api/tasks/:id', auth, async (req: Request, res: Response) => {
 		try {
-			const task = await tasksService.prisma.findUniqueOrThrow({
-				where: {
-					id: parseInt(req.params.id),
-				}
-			})
+			const task = await tasksService.get(parseInt(req.params.id))
 
 			res.status(200).send(task)
 		} catch (error) {
