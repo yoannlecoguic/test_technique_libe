@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  databaseContainer:
+    image: "postgres:15.1"
+    container_name: databaseContainer
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+
+  backContainer:
+    image: "node:19"
+    container_name: backContainer
+    ports:
+      - ${BACK_PORT}:${BACK_PORT}
+    environment:
+      - PORT=${BACK_PORT}
+      - DATABASE_URL=${DATABASE_URL}
+      - SECRET_KEY=${SECRET_KEY}
+      - JWT_EXPIRATION=${JWT_EXPIRATION}
+      - SALT_ROUNDS=${SALT_ROUNDS}
+    user: "node"
+    working_dir: /home/node/back
+    volumes:
+      - ./back/:/home/node/back
+    depends_on:
+      - databaseContainer
+    command: bash -c "npm install && npm run dev"

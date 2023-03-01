@@ -1,0 +1,4 @@
+back/dist
+back/node_modules
+back/coverage
+back/prisma/migrations/migration_lock.toml
